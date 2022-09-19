@@ -1,0 +1,39 @@
+
+//Register
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+    "nickname": "admin3",
+    "fullname": "Nguyễn Đăng Lịch",
+    "password": "1234"
+}
+
+###
+POST http://localhost:3000/api/videos
+Content-Type: application/json
+
+{
+    "title": "Hello xin chào mọi người , mình là Will đây :))",
+    "url": "https://res.cloudinary.com/ddfmsvgeb/video/upload/v1656473499/vo1bbublhemspwb3jxhk.mp4"
+}
+
+
+
+
+###
+GET http://localhost:8000/api/user/suggest?limit=5
+
+###
+GET https://tiktok.fullstack.edu.vn/api/users/search?q=hoa&type=less
+
+###
+
+http://localhost:8000/api/videos?type=home&userId=62cb773ed852c4a099ac837a
+
+###
+
+
+#Tìm kiếm videos bằng nickname
+http://localhost:5000/api/videos/bichcot
+
