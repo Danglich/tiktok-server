@@ -1,28 +1,41 @@
 
 //Register
-POST http://localhost:3000/api/auth/register
+POST http://localhost:8000/api/auth/register
 Content-Type: application/json
 
 {
-    "nickname": "admin3",
-    "fullname": "Nguyễn Đăng Lịch",
-    "password": "1234"
+    "fullname": "test",
+    "nickname": "test",
+    "password": "lich",
+    "avatar" : null
 }
 
 ###
-POST http://localhost:3000/api/videos
+PUT http://localhost:8000/api/user/update/6331c525ea8cd1a1bf7cbddc
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzMxNmM3YzI4MGU0ZDY5MDZjMjFjNzQiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NjQyMDA4MDF9.4yhzrVWSqO-IGy9lRgphYj615ckpLvsuIjpnYVF1cWg
 
 {
-    "title": "Hello xin chào mọi người , mình là Will đây :))",
-    "url": "https://res.cloudinary.com/ddfmsvgeb/video/upload/v1656473499/vo1bbublhemspwb3jxhk.mp4"
+    "fullname": "Nguyễn Dũng"
+}
+
+###
+PUT http://localhost:5000/api/videos/update/6334690613ab6cd4e08cb69e
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzMxNmM3YzI4MGU0ZDY5MDZjMjFjNzQiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NjQyMDA4MDF9.4yhzrVWSqO-IGy9lRgphYj615ckpLvsuIjpnYVF1cWg
+
+{
+    "title": "Test"
 }
 
 
 
 
 ###
-GET http://localhost:8000/api/user/suggest?limit=5
+GET http://localhost:5000/api/videos/foryou?userId=6336ec4e4cf1eb964f2a45e3&page=2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzMxNmM3YzI4MGU0ZDY5MDZjMjFjNzQiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NjQyMDA4MDF9.4yhzrVWSqO-IGy9lRgphYj615ckpLvsuIjpnYVF1cWg
+
 
 ###
 GET https://tiktok.fullstack.edu.vn/api/users/search?q=hoa&type=less

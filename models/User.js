@@ -1,5 +1,5 @@
-import mongoose from 'mongoose'
-const Schema = mongoose.Schema
+import mongoose from 'mongoose';
+const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
     fullname: {
@@ -9,7 +9,7 @@ const UserSchema = new Schema({
     nickname: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
     },
     password: {
         type: String,
@@ -17,56 +17,58 @@ const UserSchema = new Schema({
     },
     avatar: {
         type: String,
-        default: 'https://vnn-imgs-a1.vgcloud.vn/image1.ictnews.vn/_Files/2020/03/17/trend-avatar-1.jpg'
+        default:
+            'https://vnn-imgs-a1.vgcloud.vn/image1.ictnews.vn/_Files/2020/03/17/trend-avatar-1.jpg',
     },
     bio: {
         type: String,
-        default: null
+        default: null,
     },
-    followings:[{
+    followings: [
+        {
             type: Schema.Types.ObjectId,
             ref: 'user',
-            default: []
-        }]
-    ,
-    followers : [{
-        type: Schema.Types.ObjectId,
-        ref: 'user',
-        default: []
-    }],
+            default: [],
+        },
+    ],
+    followers: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'user',
+            default: [],
+        },
+    ],
     likes: {
         type: Number,
-        default: 0
+        default: 0,
     },
     webUrl: {
-        type:String,
-        default: null
-
+        type: String,
+        default: null,
     },
     facebookUrl: {
-        type:String,
-        default: null
-        
+        type: String,
+        default: null,
     },
     youtubeUrl: {
-        type:String,
-        default: null
-        
+        type: String,
+        default: null,
     },
-    videosLiked : [{
-        type: Schema.Types.ObjectId,
-        ref: 'videos',
-        default: null
-    }],
+    videosLiked: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'videos',
+            default: null,
+        },
+    ],
     roleId: {
         type: Number,
-        default: 0
+        default: 0,
     },
     createdAt: {
         type: Date,
-        default: Date.now()
-    }
-})
+        default: Date.now(),
+    },
+});
 
-
-export default mongoose.model('user', UserSchema)
+export default mongoose.model('user', UserSchema);

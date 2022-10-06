@@ -1,5 +1,5 @@
-import mongoose from 'mongoose'
-const Schema = mongoose.Schema
+import mongoose from 'mongoose';
+const Schema = mongoose.Schema;
 
 const VideoSchema = new Schema({
     user: {
@@ -18,30 +18,33 @@ const VideoSchema = new Schema({
     },
     regime: {
         type: Number,
-        enum: [1, 2, 3],//1 : Công khai, 2: Bạn bè, 3: Riêng tư
+        enum: [1, 2, 3], //1 : Công khai, 2: Bạn bè, 3: Riêng tư
         default: 1,
     },
     title: {
         type: String,
         default: ' ',
     },
-    likesCount : {
+    likesCount: {
         type: Number,
         default: 0,
     },
-    commentsCount : {
-        type: Number,
-        default: 0
-    },
-    sharesCount : {
+    commentsCount: {
         type: Number,
         default: 0,
     },
-    createAt : {
+    status: {
+        type: String,
+        default: 'active',
+    },
+    sharesCount: {
+        type: Number,
+        default: 0,
+    },
+    createdAt: {
         type: Date,
-        default : Date.now()
-    }
+        default: Date.now(),
+    },
+});
 
-})
-
-export default mongoose.model('videos', VideoSchema)
+export default mongoose.model('videos', VideoSchema);
